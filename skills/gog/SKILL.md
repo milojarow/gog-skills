@@ -35,6 +35,8 @@ If `gog` isn't installed (or OAuth isn't set up yet), see [reference/installatio
 
 ## ⚠️ Auth setup gotcha — sourcing the keyring each shell
 
+> **Fresh install? You can skip this section.** If you let `gog auth add` write to its default keyring location (no env file), there's nothing to source — this gotcha only bites if you opted into the explicit keyring env-file pattern below.
+
 If you store the OAuth keyring path / encryption key in an env file (a common pattern is `~/.config/gogcli/keyring.env`), **that file is NOT auto-sourced**. Every fresh shell starts blind to it; running `gog gmail search …` will fail with `not authenticated` or similar.
 
 **Fix:** before any `gog` command in a new shell, source the env file:
@@ -57,8 +59,10 @@ source ~/.config/gogcli/keyring.env
 | Drive — search | `gog drive search "query" --max 10` |
 | Contacts — list | `gog contacts list --max 20` |
 | Sheets — get | `gog sheets get <sheetId> "Tab!A1:D10" --json` |
-| Sheets — update | `gog sheets update <sheetId> "Tab!A1:B2" --values-json '[["A","B"],["1","2"]]' --input USER_ENTERED` |
-| Sheets — append | `gog sheets append <sheetId> "Tab!A:C" --values-json '[["x","y","z"]]' --insert INSERT_ROWS` |
+| Sheets — update | `gog sheets update <sheetId> "Tab!A1:B2" --values-json '[["A","B"],["1","2"]]' --input USER_ENTERED` ⓘ |
+| Sheets — append | `gog sheets append <sheetId> "Tab!A:C" --values-json '[["x","y","z"]]' --insert INSERT_ROWS --input USER_ENTERED` ⓘ |
+
+ⓘ `--input USER_ENTERED` = dates/formulas/percentages auto-parsed (what you usually want). `--input RAW` = values stored as literal text (`=SUM(A:A)` becomes the string `=SUM(A:A)`, no computation; `2026-01-15` stays a string, not a date). See [reference/sheets.md](reference/sheets.md) for the full contrast.
 | Sheets — clear | `gog sheets clear <sheetId> "Tab!A2:Z"` |
 | Sheets — metadata | `gog sheets metadata <sheetId> --json` |
 | Docs — export | `gog docs export <docId> --format txt --out /tmp/doc.txt` |
