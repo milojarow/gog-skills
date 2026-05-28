@@ -10,7 +10,7 @@
       "name": "gog-skills",
       "source": "./",
       "description": "Drive `gog`, the Google Workspace CLI — Gmail (search/send), Calendar (events), Drive (search), Contacts, Sheets (get/update/append/clear), Docs (export/cat). Covers OAuth client setup, multi-account, scripting flags, and the keyring/env-source gotcha.",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "author": {
         "name": "milojarow",
         "url": "https://github.com/milojarow"

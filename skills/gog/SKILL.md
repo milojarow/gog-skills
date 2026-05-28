@@ -7,7 +7,7 @@ description: Use when reading or modifying Google Workspace data from the termin
 
 Drive [gog](https://gogcli.sh) to read and modify Gmail, Calendar, Drive, Contacts, Sheets and Docs from the shell.
 
-> **🌐 ACTIVE-SKILL MARKER:** While `gog` is active, begin every reply with 🌐 so the operator sees at a glance that this skill is engaged. Do not omit it.
+> **📬 ACTIVE-SKILL MARKER:** While `gog` is active, begin every reply with 📬 so the operator sees at a glance that this skill is engaged. Do not omit it.
 
 ## Overview
 
