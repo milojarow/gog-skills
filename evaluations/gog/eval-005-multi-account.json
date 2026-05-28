@@ -1,0 +1,15 @@
+{
+  "id": "gog-005",
+  "skills": ["gog"],
+  "query": "I have two Google accounts authenticated in gog (personal and work). I want to send a Gmail from my work account specifically.",
+  "expected_behavior": [
+    "activate the gog skill",
+    "use `--account you-work@gmail.com` on the gmail send command",
+    "OR `export GOG_ACCOUNT=you-work@gmail.com` then call the gmail send command",
+    "optionally suggest `gog auth list` to confirm the work account is configured",
+    "confirm the send command with the user before executing"
+  ],
+  "expected_content": ["--account", "GOG_ACCOUNT", "gog gmail send", "gog auth list"],
+  "priority": "medium",
+  "notes": "Guards the multi-account selection pattern and the env-var alternative."
+}

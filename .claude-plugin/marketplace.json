@@ -1,0 +1,25 @@
+{
+  "name": "gog-skills",
+  "description": "Read and modify Google Workspace (Gmail, Calendar, Drive, Contacts, Sheets, Docs) from the terminal via the `gog` CLI.",
+  "owner": {
+    "name": "milojarow",
+    "url": "https://github.com/milojarow"
+  },
+  "plugins": [
+    {
+      "name": "gog-skills",
+      "source": "./",
+      "description": "Drive `gog`, the Google Workspace CLI — Gmail (search/send), Calendar (events), Drive (search), Contacts, Sheets (get/update/append/clear), Docs (export/cat). Covers OAuth client setup, multi-account, scripting flags, and the keyring/env-source gotcha.",
+      "version": "0.1.0",
+      "author": {
+        "name": "milojarow",
+        "url": "https://github.com/milojarow"
+      },
+      "category": "communication",
+      "keywords": ["gog", "google", "gmail", "calendar", "drive", "sheets", "docs", "workspace"],
+      "homepage": "https://github.com/milojarow/gog-skills",
+      "repository": "https://github.com/milojarow/gog-skills",
+      "license": "MIT"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "id": "gog-002",
+  "skills": ["gog"],
+  "query": "I want to write a header row [\"Date\",\"User\",\"Action\"] into Sheet1!A1:C1 of spreadsheet 1abc..., and have the dates auto-parse as dates when I later append rows.",
+  "expected_behavior": [
+    "activate the gog skill",
+    "use `gog sheets update 1abc... 'Sheet1!A1:C1' --values-json '[[\"Date\",\"User\",\"Action\"]]' --input USER_ENTERED`",
+    "explain WHY `--input USER_ENTERED` is the right choice here (so dates appended later are parsed as dates, not stored as strings)",
+    "contrast with `--input RAW` (would store dates as text)",
+    "cross-link or reference `reference/sheets.md` for the input-mode detail"
+  ],
+  "expected_content": ["gog sheets update", "--values-json", "USER_ENTERED", "RAW", "reference/sheets.md"],
+  "priority": "high",
+  "notes": "Guards understanding of USER_ENTERED vs RAW — the most common silent footgun in Sheets writes."
+}

@@ -1,0 +1,15 @@
+{
+  "id": "gog-001",
+  "skills": ["gog"],
+  "query": "Find emails from boss@company.example in the last week, then send a reply to one of them with subject \"Re: status\" and body \"On track.\"",
+  "expected_behavior": [
+    "activate the gog skill",
+    "use `gog gmail search 'from:boss@company.example newer_than:7d' --max <N>` to find the emails",
+    "use `gog gmail send --to boss@company.example --subject 'Re: status' --body 'On track.'` to reply",
+    "confirm the proposed `gmail send` command with the user before executing (destructive op)",
+    "optionally reference `reference/gmail-search.md` for the search operator syntax"
+  ],
+  "expected_content": ["gog gmail search", "from:", "newer_than:", "gog gmail send", "--to", "--subject", "--body"],
+  "priority": "high",
+  "notes": "Guards the two most-used Gmail flows and the discipline of confirming a send before invoking."
+}

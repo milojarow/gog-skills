@@ -1,0 +1,15 @@
+{
+  "id": "gog-003",
+  "skills": ["gog"],
+  "query": "Show me all events on my primary calendar between Feb 1 and Feb 28, 2026.",
+  "expected_behavior": [
+    "activate the gog skill",
+    "use `gog calendar events <calendarId> --from 2026-02-01T00:00:00Z --to 2026-02-28T23:59:59Z`",
+    "note that `<calendarId>` for the primary calendar IS the user's Google email",
+    "suggest adding `--json` if the user wants parseable output for scripting",
+    "do NOT propose using a different tool when gog covers this"
+  ],
+  "expected_content": ["gog calendar events", "--from", "--to", "ISO", "primary calendar"],
+  "priority": "medium",
+  "notes": "Guards calendar usage and the calendarId-vs-email subtlety. Tests that the skill knows the primary calendar shortcut."
+}
