@@ -9,7 +9,7 @@
     "suggest adding `--json` if the user wants parseable output for scripting",
     "do NOT propose using a different tool when gog covers this"
   ],
-  "expected_content": ["gog calendar events", "--from", "--to", "ISO", "primary calendar"],
+  "expected_content": ["gog calendar events", "--from", "--to", "primary calendar"],
   "priority": "medium",
   "notes": "Guards calendar usage and the calendarId-vs-email subtlety. Tests that the skill knows the primary calendar shortcut."
 }

@@ -5,13 +5,13 @@
   "expected_behavior": [
     "activate the gog skill",
     "point to `reference/installation.md`",
-    "give the macOS install path: `brew install steipete/tap/gogcli`",
+    "give the macOS install path: `brew install openclaw/tap/gogcli`",
     "walk through the one-time OAuth setup: Google Cloud Console → create project → enable APIs → OAuth consent screen (External, add user as test) → create Desktop OAuth client → download client_secret JSON",
     "then `gog auth credentials <path>` followed by `gog auth add you@gmail.com --services …`",
     "verify with `gog auth list` and a small `gog gmail search` query",
     "mention the keyring-env-source gotcha only if the user opts into a keyring env file"
   ],
-  "expected_content": ["brew install", "steipete/tap/gogcli", "Google Cloud Console", "OAuth", "Desktop", "gog auth credentials", "gog auth add", "reference/installation.md"],
+  "expected_content": ["brew install", "openclaw/tap/gogcli", "Google Cloud Console", "OAuth", "Desktop", "gog auth credentials", "gog auth add", "reference/installation.md"],
   "priority": "high",
   "notes": "Critical for transferability — the full bootstrap path must be reachable in ≤1 cross-link from SKILL.md."
 }

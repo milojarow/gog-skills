@@ -15,7 +15,7 @@ gog --version
 ### Homebrew (macOS and Linux)
 
 ```bash
-brew install steipete/tap/gogcli
+brew install openclaw/tap/gogcli
 ```
 
 The formula installs the `gog` binary on `$PATH`.
@@ -25,19 +25,20 @@ The formula installs the `gog` binary on `$PATH`.
 Releases are published on the upstream project; download the right binary for your OS/arch and put it on `$PATH`:
 
 ```bash
-# Example for Linux x86_64 — check the upstream releases page for the current URL
-curl -L -o /tmp/gog https://gogcli.sh/releases/latest/linux-amd64/gog
-chmod +x /tmp/gog
+# Linux x86_64 — pin to the current release tag from https://github.com/openclaw/gogcli/releases
+curl -L -o /tmp/gogcli.tar.gz \
+  https://github.com/openclaw/gogcli/releases/download/v0.21.0/gogcli_0.21.0_linux_amd64.tar.gz
+tar -xzf /tmp/gogcli.tar.gz -C /tmp
 sudo install /tmp/gog /usr/local/bin/gog
 ```
 
-### Building from source
+### Docker / GHCR
 
 ```bash
-go install gogcli.sh/cmd/gog@latest
+docker run --rm ghcr.io/openclaw/gogcli:<pinned-tag> --version
 ```
 
-The binary lands in `$(go env GOBIN)` (defaults to `~/go/bin/gog`); ensure that dir is on `$PATH`.
+Source builds live at github.com/openclaw/gogcli for anyone who wants them.
 
 ## One-time OAuth client setup
 
