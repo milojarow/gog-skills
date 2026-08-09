@@ -71,6 +71,7 @@ source ~/.config/gogcli/keyring.env
 | Auth — add account | `gog auth add you@gmail.com --services gmail,calendar,drive,contacts,sheets,docs` |
 
 For Gmail's search query operators (`from:`, `label:`, `newer_than:`, `is:`, …): see [reference/gmail-search.md](reference/gmail-search.md).
+For reading message bodies when the relationship between fields matters (flattened text vs raw HTML): see [reference/gmail-message-bodies.md](reference/gmail-message-bodies.md).
 For Sheets' range syntax, `--input` modes and batch patterns: see [reference/sheets.md](reference/sheets.md).
 
 ## Multiple accounts
@@ -105,3 +106,4 @@ gog gmail search 'is:unread' --max 10   # uses you-work
 - **Confusing calendar `<calendarId>` with the email address** — for a user's primary calendar it IS the email, but for shared calendars it's a long Google-assigned ID. Get it from `Settings → Integrate Calendar` in Calendar web UI, or via `gog calendar list` if available.
 - **Not confirming destructive ops** — `gmail send` and creating calendar events are visible to others. Read the proposed command back to the user before invoking.
 - **Assuming `--json` is enabled by default** — it's not. Without it, output is human-formatted and a pain to parse.
+- **Reading a flattened message body when field *relationships* matter** — flattening two HTML tables into one text stream fabricates adjacencies that were never in the document (a loose label lands next to another table's values). Tripwire: a field that contradicts itself, e.g. a weekday name that doesn't match its own date. See [reference/gmail-message-bodies.md](reference/gmail-message-bodies.md).
